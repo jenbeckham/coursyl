@@ -14,3 +14,26 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+
+function updateButton() {
+  document.getElementById("disable-button").disabled = 1;
+}
+
+
+window.onload = function hideGrade() {
+  var section = document.getElementsByClassName("association container");
+  var grade = section[section.length-1];
+  grade.style.display = "none";
+}
+
+function toggle(){
+  var section = document.getElementsByClassName("association container");
+  var grade = section[section.length-1];
+  grade.style.display = "inline-block";
+}
+
+function deleteGrade(button){
+  var row = button.parentElement.parentElement;
+  row.style.display = "none";
+  button.parentElement.lastElementChild.checked = true;
+}
